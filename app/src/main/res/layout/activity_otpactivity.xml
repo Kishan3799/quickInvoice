@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OTPActivity">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Verify OTP"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/seed"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/subheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Enter the six digit code sent to "
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+    <TextView
+        android:id="@+id/emailIdView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        tools:text="8130905701"
+        android:textSize="16sp"
+        android:textColor="@color/seed"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subheading" />
+
+    <LinearLayout
+        android:id="@+id/otp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailIdView"
+        android:layout_marginVertical="12dp">
+
+        <EditText
+            android:id="@+id/otp_et1"
+            android:layout_width="50dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:hint="3"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="4dp"
+            android:layout_height="50dp"
+            android:background="@drawable/otp_et_bg"
+            />
+        <EditText
+            android:id="@+id/otp_et2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:hint="3"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/otp_et_bg"
+            />
+        <EditText
+            android:id="@+id/otp_et3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:hint="3"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/otp_et_bg"
+            />
+        <EditText
+            android:id="@+id/otp_et4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:hint="3"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/otp_et_bg"
+            />
+        <EditText
+            android:id="@+id/otp_et5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:hint="3"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/otp_et_bg"
+            />
+        <EditText
+            android:id="@+id/otp_et6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:hint="3"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/otp_et_bg"
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirm_btn"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingVertical="12dp"
+        android:layout_marginTop="48dp"
+        android:text="Confirm"
+        android:textAllCaps="false"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_layout" />
+
+    <TextView
+        android:id="@+id/resend_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend OTP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_btn"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_regular"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

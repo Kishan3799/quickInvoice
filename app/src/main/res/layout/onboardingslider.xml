@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/onBoardingImage"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:src="@drawable/invoice"
+        android:layout_marginTop="50dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="onBoardingImage"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/onBoardingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/seed"
+        android:textSize="24sp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onBoardingImage"
+        android:layout_marginTop="18dp"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/onBoardingSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:paddingHorizontal="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/md_theme_dark_outline"
+        app:layout_constraintTop_toBottomOf="@+id/onBoardingTitle"
+        tools:text="subtilte subtilte subtilte subtilte subtilte"
+        android:fontFamily="@font/poppins_regular"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Invoice App</string>
+    <string name="skip">Skip</string>
+    <string name="started">Get Started</string>
+    <string name="next">Next</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="add_customer">Add Customer</string>
+
+</resources>

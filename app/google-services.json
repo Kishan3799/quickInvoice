@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92093125138",
+    "project_id": "quickinvoice-b848c",
+    "storage_bucket": "quickinvoice-b848c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92093125138:android:986e562219f7926a337ecb",
+        "android_client_info": {
+          "package_name": "com.kishan.quickinvoice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92093125138-li77dmfnumj565uqd47b58r0secpbvs1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmy22ABLH9a0nvLyWs6OphwgKIz4HNYPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92093125138-li77dmfnumj565uqd47b58r0secpbvs1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
