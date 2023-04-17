@@ -37,7 +37,7 @@ class OnBoardingActivity : AppCompatActivity() {
 
         binding.nextBtn.setOnClickListener {
             if(getItem() > binding.viewPager.childCount){
-                Toast.makeText(this, "last onboarding screen", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "last Onboarding screen", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this@OnBoardingActivity, CreateAccountActivity::class.java))
             }else{
                 binding.viewPager.setCurrentItem(getItem()+1, true)

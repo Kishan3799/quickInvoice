@@ -19,12 +19,14 @@ class LoginActivity : AppCompatActivity() {
     private var email : Editable? = null
     private var password : Editable? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
 
         email = binding.emailEt.text
         password = binding.passwordEt.text
@@ -33,15 +35,24 @@ class LoginActivity : AppCompatActivity() {
           userSignIn(email.toString(),password.toString())
         }
 
+        //check if user is currently sign in then open MainActivity
+        if(currentUser != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
+
+
+    //this method is signIn the user
     private fun userSignIn(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("SING_USER", "signInWithEmail:success")
-                    val user = auth.currentUser
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 } else {

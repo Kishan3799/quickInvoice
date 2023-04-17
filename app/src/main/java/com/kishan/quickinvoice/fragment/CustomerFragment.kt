@@ -35,17 +35,17 @@ class CustomerFragment:Fragment(R.layout.fragement_customer) {
 
         customerAdapter = CustomerAdapter(requireContext(),customerList)
 
-        database.reference.child("customers")
+        database.reference.child("customers").child(FirebaseAuth.getInstance().currentUser!!.uid)
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     customerList.clear()
 
-                    for (snapshot1 in snapshot.children){
-//                        val customer = snapshot1.getValue(CustomerModel::class.java)
-//                        if (customer!!.customerPhoneNumber != FirebaseAuth.getInstance().uid){
-//                            customerList.add(customer)
-//                        }
-//                        binding.customerRv.adapter = customerAdapter
+                    for (children in snapshot.children){
+                        val customer = children.getValue(CustomerModel::class.java)
+                        if (customer!!.customerId != FirebaseAuth.getInstance().uid){
+                            customerList.add(customer)
+                        }
+                        binding.customerRv.adapter = customerAdapter
                     }
                 }
 

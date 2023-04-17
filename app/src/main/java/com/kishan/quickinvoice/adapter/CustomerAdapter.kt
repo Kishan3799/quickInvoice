@@ -25,6 +25,8 @@ class CustomerAdapter(val context: Context, var customerList:ArrayList<CustomerM
 
     override fun onBindViewHolder(holder: CustomerViewHolder, position: Int) {
         val customer = customerList[position]
+
+        holder.binding.tvNameFirstLetter.text = customer.customerName!![0].toString() //Alternatively, using customer.customerName!!.substring(0,1) return first letter of name
         holder.binding.tvName.text = customer.customerName
         holder.binding.tvContact.text = customer.customerPhoneNumber
         holder.binding.customerItemCard.setOnClickListener {

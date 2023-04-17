@@ -30,7 +30,7 @@ class OTPActivity : AppCompatActivity() {
 
         //code sent on email id
         val option = PhoneAuthOptions.Builder(auth)
-            .setPhoneNumber(contactNumber.toString())
+            .setPhoneNumber(contactNumber)
             .setTimeout(60L , TimeUnit.SECONDS)
             .setActivity(this)
             .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
@@ -39,7 +39,7 @@ class OTPActivity : AppCompatActivity() {
                 }
 
                 override fun onVerificationFailed(error: FirebaseException) {
-                    Toast.makeText(this@OTPActivity, "Please try Again ${error}", Toast.LENGTH_SHORT ).show()
+                    Toast.makeText(this@OTPActivity, "Please try Again $error", Toast.LENGTH_SHORT ).show()
                 }
 
                 override fun onCodeSent(code: String, token: PhoneAuthProvider.ForceResendingToken) {
@@ -56,20 +56,24 @@ class OTPActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter Otp", Toast.LENGTH_SHORT).show()
             }else{
                 val credential = PhoneAuthProvider.getCredential(verificationCode, typedOtp)
-
-                auth.signInWithCredential(credential)
-                    .addOnCompleteListener{
-                        if (it.isSuccessful){
-                            startActivity(Intent(this, LoginActivity::class.java))
-                            finish()
-                        }else{
-                            Toast.makeText(this,"Error ${it.exception}", Toast.LENGTH_SHORT).show()
-                        }
-                    }
+                signInWithPhoneAuthCredential(credential)
             }
 
         }
 
 
+
     }
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential){
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener{
+                if (it.isSuccessful){
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                }else{
+                    Toast.makeText(this,"Error ${it.exception}", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
 }

@@ -11,17 +11,32 @@
     android:id="@+id/customerItemCard"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/tvNameImage"
+<!--    <ImageView-->
+<!--        android:id="@+id/tvNameImage"-->
+<!--        android:layout_width="48dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:contentDescription="First Letter"-->
+<!--        android:src="@drawable/circle_with_letter"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        />-->
+    <TextView
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_margin="8dp"
-        android:contentDescription="First Letter"
-        android:src="@drawable/circle_with_letter"
+        android:id="@+id/tvNameFirstLetter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="8dp"
+        tools:text ="K"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:background="@drawable/customer_first_letter_bg"
         />
+
 
     <TextView
         android:id="@+id/tvName"
@@ -33,7 +48,7 @@
         android:textColor="#000"
         android:fontFamily="@font/poppins_semibold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvNameImage"
+        app:layout_constraintStart_toEndOf="@+id/tvNameFirstLetter"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -43,8 +58,10 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/poppins_medium"
         android:text="+918130905701"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvNameImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvNameFirstLetter"
         app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
