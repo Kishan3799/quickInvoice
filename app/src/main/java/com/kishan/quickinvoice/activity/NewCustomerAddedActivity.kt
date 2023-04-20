@@ -51,8 +51,7 @@ class NewCustomerAddedActivity : AppCompatActivity() {
     }
 
     private fun addCustomer(name:String, email:String, address:String, phoneNumber:String, info:String){
-        val uniqueCustomerId = database.push().key
-        val customer = CustomerModel(uniqueCustomerId,name,email,phoneNumber,address,info)
-        database.child("customers").child(auth.currentUser!!.uid).child(uniqueCustomerId!!).setValue(customer)
+        val customer = CustomerModel(name,email,phoneNumber,address,info)
+        database.child("customers").child(auth.currentUser!!.uid).child(phoneNumber).setValue(customer)
     }
 }

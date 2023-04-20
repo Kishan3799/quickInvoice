@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
+import com.google.firebase.auth.FirebaseAuth
+import com.kishan.quickinvoice.MainActivity
 import com.kishan.quickinvoice.R
 import com.kishan.quickinvoice.adapter.ViewPager2Adapter
 import com.kishan.quickinvoice.databinding.ActivityOnBoardingBinding
@@ -13,10 +15,14 @@ class OnBoardingActivity : AppCompatActivity() {
 
     lateinit var viewPager2Adapter: ViewPager2Adapter
     lateinit var binding: ActivityOnBoardingBinding
+    lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
 
         viewPager2Adapter = ViewPager2Adapter(this)
         binding.viewPager.adapter = viewPager2Adapter
@@ -53,6 +59,14 @@ class OnBoardingActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val currentUser = firebaseAuth.currentUser
+        if(currentUser != null){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun getItem(): Int {

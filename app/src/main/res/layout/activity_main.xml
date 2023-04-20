@@ -25,6 +25,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fragLayout"
         app:menu="@menu/bottom_nav_item_menu"
         app:elevation="8dp"
+
         tools:ignore="VisualLintBottomNav" />
 
 

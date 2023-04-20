@@ -42,7 +42,7 @@ class CustomerFragment:Fragment(R.layout.fragement_customer) {
 
                     for (children in snapshot.children){
                         val customer = children.getValue(CustomerModel::class.java)
-                        if (customer!!.customerId != FirebaseAuth.getInstance().uid){
+                        if (customer!!.customerPhoneNumber != FirebaseAuth.getInstance().uid){
                             customerList.add(customer)
                         }
                         binding.customerRv.adapter = customerAdapter

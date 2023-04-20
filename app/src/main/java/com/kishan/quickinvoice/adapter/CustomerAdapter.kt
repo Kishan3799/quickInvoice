@@ -1,16 +1,20 @@
 package com.kishan.quickinvoice.adapter
 
 import android.content.Context
+import android.content.Intent
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.internal.TextDrawableHelper.TextDrawableDelegate
+
 import com.kishan.quickinvoice.R
+import com.kishan.quickinvoice.activity.CustomerInfoActivity
+
 import com.kishan.quickinvoice.databinding.CustomerRvItemBinding
 import com.kishan.quickinvoice.model.CustomerModel
-import org.w3c.dom.Text
+
 
 class CustomerAdapter(val context: Context, var customerList:ArrayList<CustomerModel> ) : RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder>(){
     inner class CustomerViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -30,8 +34,11 @@ class CustomerAdapter(val context: Context, var customerList:ArrayList<CustomerM
         holder.binding.tvName.text = customer.customerName
         holder.binding.tvContact.text = customer.customerPhoneNumber
         holder.binding.customerItemCard.setOnClickListener {
-            Toast.makeText(context,"click on", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CustomerInfoActivity::class.java)
+            intent.putExtra("phoneNumber", customerList[position].customerPhoneNumber)
+            context.startActivity(intent)
         }
     }
 
 }
+

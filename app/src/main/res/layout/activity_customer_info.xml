@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Header section -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <!-- Back button -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="previous"
+            android:src="@drawable/back_arrow"
+            android:layout_centerVertical="true"
+            />
+
+        <!-- Customer name -->
+        <TextView
+            android:id="@+id/customerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/backButton"
+            android:text="Customer Name"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="24sp"
+            android:textColor="#181818"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"/>
+
+        <!-- Edit button -->
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/outline_edit_24"
+            android:background="@drawable/customer_first_letter_bg"
+            />
+
+        <!-- Delete button -->
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toStartOf="@id/editButton"
+            android:src="@drawable/outline_delete_24"
+            android:background="@drawable/customer_first_letter_bg"
+            android:layout_marginEnd="12dp"/>
+
+    </RelativeLayout>
+
+    <!-- Customer information section -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/customerNameCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_margin="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/md_theme_light_surfaceVariant"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Customer name -->
+            <TextView
+                android:id="@+id/customerInfoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Name" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="8dp"/>
+            <TextView
+                android:id="@+id/customerTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Kishan Verma"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/customerEmailCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerNameCard"
+        android:layout_margin="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/md_theme_light_surfaceVariant"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Customer name -->
+            <TextView
+                android:id="@+id/customerInfoEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Email" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="8dp"/>
+            <TextView
+                android:id="@+id/customerInfoEmailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="KishanVerma371997@gmail.com"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    customer Address card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/customerAddressCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerEmailCard"
+        android:layout_margin="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/md_theme_light_surfaceVariant"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Customer name -->
+            <TextView
+                android:id="@+id/customerInfoAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Adddress" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="8dp"/>
+            <TextView
+                android:id="@+id/customerTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Mandawali East Delhi"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    customer Phone card -->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/customerPhoneCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerAddressCard"
+        android:layout_margin="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/md_theme_light_surfaceVariant"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Customer name -->
+            <TextView
+                android:id="@+id/customerInfoPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Phone" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="8dp"/>
+            <TextView
+                android:id="@+id/customerTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="8130905701"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    Customer Additional Info-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/customerAdditionalInfoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerPhoneCard"
+        android:layout_margin="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/md_theme_light_surfaceVariant"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Customer name -->
+            <TextView
+                android:id="@+id/customerInfoAdditional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Additional Information" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="8dp"/>
+            <TextView
+                android:id="@+id/customerTextAdditionalInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Android Developer"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
