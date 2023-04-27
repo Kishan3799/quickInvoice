@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:elevation="4dp"
+    android:background="@drawable/custome_item_bg"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Product "
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#000"
+            android:layout_alignBottom="@+id/tvPrice"
+            />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2500"
+            android:textColor="@color/seed"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <!-- Edit button -->
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+
+            android:background="@drawable/customer_first_letter_bg"
+            android:contentDescription="edit"
+            android:src="@drawable/outline_edit_24"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Delete button -->
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:layout_toStartOf="@id/editButton"
+            android:background="@drawable/customer_first_letter_bg"
+            android:contentDescription="delete"
+            android:src="@drawable/outline_delete_24"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -27,22 +27,22 @@ class CustomerInfoActivity : AppCompatActivity() {
 
         binding.editButton.setOnClickListener {
             val openCustomerUpdateActivity = Intent(this, CustomerUpdateActivity::class.java)
-            openCustomerUpdateActivity.putExtra("phone" , contactNumber)
+            openCustomerUpdateActivity.putExtra("phone", contactNumber)
             startActivity(openCustomerUpdateActivity)
         }
         binding.deleteButton.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Are you sure you want to delete this customer")
-            builder.setPositiveButton("Delete"){ dialog,which->
-                if(contactNumber != null) {
-                    if (contactNumber.isNotEmpty()){
+            builder.setPositiveButton("Delete") { dialog, which ->
+                if (contactNumber != null) {
+                    if (contactNumber.isNotEmpty()) {
                         deleteCustomer(contactNumber)
-                    }else{
-                        Toast.makeText(this,  "Customer is not deleted ", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Customer is not deleted ", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
-            builder.setNegativeButton("Cancel"){ dialog, which->
+            builder.setNegativeButton("Cancel") { dialog, which ->
                 dialog.cancel()
             }
             val alertDialog = builder.create()
@@ -52,22 +52,44 @@ class CustomerInfoActivity : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().reference
 
-        database.child("customers").child(FirebaseAuth.getInstance().currentUser!!.uid).child(contactNumber!!).get()
-            .addOnSuccessListener { dataSnapshot ->
-//                Log.d("firebase", "Got Value ${it.value}")
-                if (dataSnapshot.exists()){
-                    binding.customerTextName.text = dataSnapshot.child("customerName").value.toString()
-                    binding.customerInfoEmailText.text = dataSnapshot.child("customerEmailAddress").value.toString()
-                    binding.customerTextPhone.text = dataSnapshot.child("customerPhoneNumber").value.toString()
-                    binding.customerTextAddress.text = dataSnapshot.child("customerAddress").value.toString()
-                    binding.customerTextAdditionalInfo.text = dataSnapshot.child("customerAdditionalInfo").value.toString()
-                    binding.customerName.text = dataSnapshot.child("customerName").value.toString()
-
+        database.child("customers").child(FirebaseAuth.getInstance().currentUser!!.uid)
+            .child(contactNumber!!)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        binding.customerTextName.text =
+                            snapshot.child("customerName").value.toString()
+                        binding.customerInfoEmailText.text =
+                            snapshot.child("customerEmailAddress").value.toString()
+                        binding.customerTextPhone.text =
+                            snapshot.child("customerPhoneNumber").value.toString()
+                        binding.customerTextAddress.text =
+                            snapshot.child("customerAddress").value.toString()
+                        binding.customerTextAdditionalInfo.text =
+                            snapshot.child("customerAdditionalInfo").value.toString()
+                        binding.customerName.text = snapshot.child("customerName").value.toString()
+                    }
                 }
-            }.addOnFailureListener {
-//                Log.e("firebase" , "Error ", it)
-                Toast.makeText(this, "Failed to Load..." , Toast.LENGTH_SHORT).show()
-            }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+//                Log.d("firebase", "Got Value ${it.value}")
+//                if (dataSnapshot.exists()){
+//                    binding.customerTextName.text = dataSnapshot.child("customerName").value.toString()
+//                    binding.customerInfoEmailText.text = dataSnapshot.child("customerEmailAddress").value.toString()
+//                    binding.customerTextPhone.text = dataSnapshot.child("customerPhoneNumber").value.toString()
+//                    binding.customerTextAddress.text = dataSnapshot.child("customerAddress").value.toString()
+//                    binding.customerTextAdditionalInfo.text = dataSnapshot.child("customerAdditionalInfo").value.toString()
+//                    binding.customerName.text = dataSnapshot.child("customerName").value.toString()
+//
+//                }
+//            }.addOnFailureListener {
+////                Log.e("firebase" , "Error ", it)
+//                Toast.makeText(this, "Failed to Load..." , Toast.LENGTH_SHORT).show()
+//            }
 
     }
 

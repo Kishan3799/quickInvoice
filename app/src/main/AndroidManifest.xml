@@ -15,6 +15,9 @@
         android:theme="@style/Theme.InvoiceApp"
         tools:targetApi="31">
         <activity
+            android:name=".activity.AddInventoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.CustomerUpdateActivity"
             android:exported="false" />
         <activity
