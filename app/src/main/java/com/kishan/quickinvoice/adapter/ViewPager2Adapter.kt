@@ -9,15 +9,20 @@ import com.kishan.quickinvoice.databinding.OnboardingsliderBinding
 
 //OnBoarding Screen Adapter
 class ViewPager2Adapter(private val context: Context) :RecyclerView.Adapter<ViewPager2Adapter.ViewPagerViewHolder>() {
+    //viewPager viewHolder class extends with recyclerView holder class
     inner class ViewPagerViewHolder(val binding : OnboardingsliderBinding): RecyclerView.ViewHolder(binding.root)
 
+    // override this function to create views and return type of this fun is viewPagerViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder {
+        //initialize layout to binding
         val binding = OnboardingsliderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewPagerViewHolder(binding)
     }
 
+    //in this function return the size of the onBoarding list
     override fun getItemCount() = titleList.size
 
+    //this function bind the viewPageViewHolder class to the layout
     override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
         holder.binding.onBoardingImage.setImageResource(imagelist[position])
         holder.binding.onBoardingTitle.text = titleList[position]

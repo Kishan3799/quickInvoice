@@ -17,6 +17,7 @@ import com.kishan.quickinvoice.model.Services
 
 class ServiceFragment:Fragment(R.layout.fragment_service) {
     private lateinit var binding: FragmentServiceBinding
+
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
 
@@ -53,8 +54,11 @@ class ServiceFragment:Fragment(R.layout.fragment_service) {
         return binding.root
     }
 
+//    this function is add service to inventory firebase database
     private fun addServicesToInventory(serviceName: String, serviceCharge: String, discount: String, tax: String) {
+        //it generate random id by default firebase database
         val serviceId = database.push().key
+
         val services = Services(serviceId,serviceName, serviceCharge, discount, tax)
 
         database.child("services").child(auth.currentUser!!.uid).child(serviceName).setValue(services)

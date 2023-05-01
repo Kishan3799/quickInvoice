@@ -15,7 +15,9 @@ import com.kishan.quickinvoice.activity.CustomerInfoActivity
 import com.kishan.quickinvoice.databinding.CustomerRvItemBinding
 import com.kishan.quickinvoice.model.CustomerModel
 
-
+//Customer Adapter for listing all customer in recycler View
+//taking parameter of context and customerList type ArrayList using CustomerModel class
+//this class is extends with recyclerView Adapter
 class CustomerAdapter(val context: Context, var customerList:ArrayList<CustomerModel> ) : RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder>(){
     inner class CustomerViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val binding: CustomerRvItemBinding = CustomerRvItemBinding.bind(view)
@@ -35,7 +37,7 @@ class CustomerAdapter(val context: Context, var customerList:ArrayList<CustomerM
         holder.binding.tvContact.text = customer.customerPhoneNumber
         holder.binding.customerItemCard.setOnClickListener {
             val intent = Intent(context, CustomerInfoActivity::class.java)
-            intent.putExtra("phoneNumber", customerList[position].customerPhoneNumber)
+            intent.putExtra("phoneNumber", customer.customerPhoneNumber)
             context.startActivity(intent)
         }
     }

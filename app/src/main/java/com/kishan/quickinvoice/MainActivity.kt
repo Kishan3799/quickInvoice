@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         invoiceFragment = InvoiceFragment()
         receiptFragment = ReceiptFragment()
 
+        //this function is set current fragment
         setCurrentFragment(invoiceFragment)
 
         bottomNavigationView = findViewById(R.id.bottomBar)

@@ -48,15 +48,16 @@ class ProductFragment:Fragment(R.layout.fragment_product) {
         discount= binding.etDiscount.text
         tax= binding.etTax.text
 
+        // list for choosing units
         val unitItem = listOf("Pkt", "Kg", "Gram", "L", "Ml", "Box", "Pcs", "Dz", "Ft")
+        //initialise array adapter with listItemLayout  and unit item
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, unitItem)
         binding.autoComplete.setAdapter(adapter)
         binding.autoComplete.setOnItemClickListener { adapterView, view, i, l ->
             unit = adapterView.getItemAtPosition(i).toString()
         }
 
-
-
+        // saving the product after click the productBtn
         binding.productBtn.setOnClickListener {
 //            Log.d("product Unit", "$productName $sellingPrice $quantity $discount $tax $unit")
             addProductToInventory(
@@ -69,6 +70,7 @@ class ProductFragment:Fragment(R.layout.fragment_product) {
             )
             Toast.makeText(requireContext(),"Product Added", Toast.LENGTH_SHORT).show()
 
+            //clear text field after saving the product
             products!!.clear()
             sellingPrice!!.clear()
             quantity!!.clear()
@@ -82,6 +84,7 @@ class ProductFragment:Fragment(R.layout.fragment_product) {
         return binding.root
     }
 
+    //this function is add products to inventory firebase database
     private fun addProductToInventory(productName: String, sellingPrice: String, quantity: String, unit: String, discount: String, tax: String) {
         val productId = database.push().key
         val products = Products(productId, productName,sellingPrice, quantity, unit, discount, tax)

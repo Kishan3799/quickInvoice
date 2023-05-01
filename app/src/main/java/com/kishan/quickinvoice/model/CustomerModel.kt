@@ -1,5 +1,6 @@
 package com.kishan.quickinvoice.model
 
+/* customer Model */
 data class CustomerModel(
     val customerName : String? =null,
     val customerEmailAddress : String? = null,

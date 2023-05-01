@@ -13,7 +13,6 @@ import com.kishan.quickinvoice.R
 import com.kishan.quickinvoice.activity.AddInventoryActivity
 import com.kishan.quickinvoice.adapter.InventoryAdapter
 import com.kishan.quickinvoice.databinding.FragmentInventoryBinding
-import com.kishan.quickinvoice.model.Inventory
 import com.kishan.quickinvoice.model.Products
 import com.kishan.quickinvoice.model.Services
 

@@ -17,6 +17,7 @@ import com.kishan.quickinvoice.adapter.CustomerAdapter
 import com.kishan.quickinvoice.databinding.FragementCustomerBinding
 import com.kishan.quickinvoice.model.CustomerModel
 
+/* Customer Fragment have all customers to be added*/
 class CustomerFragment:Fragment(R.layout.fragement_customer) {
     private lateinit var binding:FragementCustomerBinding
     private lateinit var database:FirebaseDatabase
@@ -29,12 +30,15 @@ class CustomerFragment:Fragment(R.layout.fragement_customer) {
     ): View{
         binding = FragementCustomerBinding.inflate(layoutInflater)
 
+        // initialise firebaseDatabase instance
         database = FirebaseDatabase.getInstance()
-
+        //initialise ArrayList to customer variable
         customerList = ArrayList()
 
+        // initialise CustomerAdapter Class to customerAdapter variable
         customerAdapter = CustomerAdapter(requireContext(),customerList)
 
+        // take reference customers to currentUserID to add all values in recyclerView using customer model class
         database.reference.child("customers").child(FirebaseAuth.getInstance().currentUser!!.uid)
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -55,6 +59,7 @@ class CustomerFragment:Fragment(R.layout.fragement_customer) {
 
             })
 
+        // Customer Fab button to add customer and open NewCustomerAddedActivity
         binding.addCustomerFabBtn.setOnClickListener{
             val intent = Intent(activity, NewCustomerAddedActivity::class.java)
             startActivity(intent)
