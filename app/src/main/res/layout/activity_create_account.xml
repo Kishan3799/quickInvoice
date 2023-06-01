@@ -14,12 +14,13 @@
         android:layout_gravity="center"
         android:layout_height="250dp"
         android:src="@drawable/authenticate"
+        android:contentDescription="@string/authenticate_image"
         android:layout_marginTop="70dp"/>
 
     <ImageView
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:contentDescription="Authentication"
+        android:contentDescription="@string/authentication"
         android:layout_gravity="center"
         android:layout_marginTop="18dp"
         android:src="@drawable/splashlogo" />
@@ -30,7 +31,7 @@
         android:layout_gravity="center"
         android:textSize="16sp"
         android:layout_marginTop="16dp"
-        android:text="Manage your business more easily"
+        android:text="@string/manage_your_business_more_easily"
         />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signup_btn"

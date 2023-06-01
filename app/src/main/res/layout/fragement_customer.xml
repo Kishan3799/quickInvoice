@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins_semibold"
         android:paddingVertical="10dp"
-        android:text="Customers"
+        android:text="@string/customers"
         android:textColor="@color/md_theme_dark_onSecondary"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,11 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
         android:layout_marginVertical="16dp"
-        android:hint="Search by Name or Number"
+        android:hint="@string/search_by_name_or_number"
         android:minHeight="48dp"
         android:textStyle="italic"
         android:textAlignment="viewStart"
         android:paddingStart="18dp"
+        android:paddingEnd="18dp"
         android:drawableStart="@drawable/search"
         android:background="@drawable/search_bg"
         android:drawablePadding="19dp"
@@ -39,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCustomer"
         android:inputType="text"
-     />
+        tools:ignore="Autofill" />
 
 
     <androidx.recyclerview.widget.RecyclerView

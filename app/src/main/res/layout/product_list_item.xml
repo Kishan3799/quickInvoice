@@ -24,7 +24,6 @@
             android:textSize="18sp"
             android:fontFamily="@font/poppins_semibold"
             android:textColor="#000"
-            android:layout_alignBottom="@+id/tvPrice"
             />
 
         <TextView
@@ -53,7 +52,7 @@
             android:layout_alignParentEnd="true"
 
             android:background="@drawable/customer_first_letter_bg"
-            android:contentDescription="edit"
+            android:contentDescription="@string/edit"
             android:src="@drawable/outline_edit_24"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -65,7 +64,7 @@
             android:layout_marginEnd="12dp"
             android:layout_toStartOf="@id/editButton"
             android:background="@drawable/customer_first_letter_bg"
-            android:contentDescription="delete"
+            android:contentDescription="@string/delete"
             android:src="@drawable/outline_delete_24"
             tools:ignore="TouchTargetSizeCheck" />
 

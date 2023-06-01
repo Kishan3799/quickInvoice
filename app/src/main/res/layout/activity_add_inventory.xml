@@ -14,7 +14,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#fff"
-        android:contentDescription="back screen button"
+        android:contentDescription="@string/back_screen_button"
         android:src="@drawable/back_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Add Inventory"
+        android:text="@string/add_inventory"
         android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/back_btn"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="10dp"
-        android:text="Product"
+        android:text="@string/product"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back_btn" />
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
-        android:text="Service"
+        android:text="@string/service"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/productButton"
         app:layout_constraintTop_toBottomOf="@+id/back_btn" />

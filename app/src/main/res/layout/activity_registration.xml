@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -23,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Kindly fill the following details to get started"
+        android:text="@string/kindly_fill_the_following_details_to_get_started"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/poppins_medium"
@@ -45,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Business Name">
+            android:hint="@string/business_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/business_et"
@@ -60,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Email Address">
+            android:hint="@string/email_address">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -75,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Phone Number">
+            android:hint="@string/phone_number">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -90,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Create Password"
+            android:hint="@string/create_password"
             app:endIconMode="password_toggle"
             >
 
@@ -110,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             app:endIconMode="password_toggle"
-            android:hint="Re-enter Password"
+            android:hint="@string/re_enter_password"
             app:endIconDrawable="@drawable/baseline_remove_red_eye_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -126,13 +125,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:text="I accept the Term of Use and Privacy Policy"/>
+            android:text="@string/i_accept_the_term_of_use_and_privacy_policy"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/continue_btn"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:text="Continue"
+            android:text="@string/continue_btn"
             android:textAllCaps="false"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/poppins_semibold"
@@ -143,7 +142,7 @@
             android:id="@+id/login_view_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account? Log In"
+            android:text="@string/already_account"
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="8dp"
             android:fontFamily="@font/poppins_regular"/>

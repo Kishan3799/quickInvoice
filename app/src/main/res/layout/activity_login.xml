@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Welcome back!"
+        android:text="@string/welcome_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Log into your account with the detail below"
+        android:text="@string/log_into_your_account_with_the_detail_below"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/poppins_medium"
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Email Address">
+            android:hint="@string/email_address">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEt"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             app:endIconMode="password_toggle"
-            android:hint="Password">
+            android:hint="@string/password">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEt"
@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgot Password"
+            android:text="@string/forgot_password"
             android:layout_marginVertical="16dp"
             android:layout_gravity="end"
             android:fontFamily="@font/poppins_regular"
@@ -86,7 +86,7 @@
             android:id="@+id/confirm_btn"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:text="Confirm"
+            android:text="@string/confirm"
             android:textAllCaps="false"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/poppins_semibold"
@@ -97,7 +97,7 @@
             android:id="@+id/login_view_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dont't have an account? Sign Up"
+            android:text="@string/dont_t_have_an_account_sign_up"
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="8dp"
             android:fontFamily="@font/poppins_regular"/>

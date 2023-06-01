@@ -13,7 +13,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Edit Inventory"
+        android:text="@string/edit_inventory"
         android:textColor="#000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="95dp"
         android:layout_marginTop="28dp"
-        android:contentDescription="close"
+        android:contentDescription="@string/close"
         android:src="@drawable/baseline_close_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvUpdateInventory"
@@ -45,7 +45,7 @@
        <com.google.android.material.textfield.TextInputLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:hint="Product Name"
+           android:hint="@string/product_name"
            android:id="@+id/textInput"
            android:layout_margin="10dp"
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -63,7 +63,7 @@
        <com.google.android.material.textfield.TextInputLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:hint="Selling Price"
+           android:hint="@string/selling_price"
            android:layout_margin="10dp"
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
            >
@@ -81,7 +81,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_margin="10dp"
-           android:hint="Quantity"
+           android:hint="@string/quantity"
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
            >
 
@@ -98,7 +98,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_margin="10dp"
-           android:hint="Select Unit"
+           android:hint="@string/select_unit"
            android:id="@+id/textfeild"
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
            >
@@ -106,13 +106,14 @@
                android:id="@id/autoComplete"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:inputType="none"/>
+               android:inputType="none"
+               tools:ignore="LabelFor" />
        </com.google.android.material.textfield.TextInputLayout>
 
        <com.google.android.material.textfield.TextInputLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:hint="Discount"
+           android:hint="@string/discount"
            android:layout_margin="10dp"
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
            >
@@ -129,7 +130,7 @@
        <com.google.android.material.textfield.TextInputLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:hint="Tax %"
+           android:hint="@string/tax"
            android:layout_margin="10dp"
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
            >
@@ -147,7 +148,7 @@
            android:id="@+id/productUpdateBtn"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:text="Save"
+           android:text="@string/save"
            android:textAllCaps="false"
            android:layout_marginVertical="20dp"
            android:layout_marginHorizontal="10dp"

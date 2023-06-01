@@ -19,7 +19,7 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="previous"
+            android:contentDescription="@string/back_button"
             android:src="@drawable/back_arrow"
             android:layout_centerVertical="true"
             />
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/backButton"
-            android:text="Customer Name"
+            android:text="@string/customer_name"
             android:fontFamily="@font/poppins_medium"
             android:textSize="24sp"
             android:textColor="#181818"
@@ -45,6 +45,7 @@
             android:layout_alignParentEnd="true"
             android:src="@drawable/outline_edit_24"
             android:background="@drawable/customer_first_letter_bg"
+            android:contentDescription="@string/delete"
             />
 
         <!-- Delete button -->
@@ -55,6 +56,7 @@
             android:layout_toStartOf="@id/editButton"
             android:src="@drawable/outline_delete_24"
             android:background="@drawable/customer_first_letter_bg"
+            android:contentDescription="@string/edit"
             android:layout_marginEnd="12dp"/>
 
     </RelativeLayout>
@@ -82,7 +84,7 @@
                 android:id="@+id/customerInfoName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Customer Name" />
+                android:text="@string/customer_name" />
 
             <Space
                 android:layout_width="8dp"
@@ -122,7 +124,7 @@
                 android:id="@+id/customerInfoEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Customer Email" />
+                android:text="@string/customer_email" />
 
             <Space
                 android:layout_width="8dp"
@@ -163,7 +165,7 @@
                 android:id="@+id/customerInfoAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Customer Adddress" />
+                android:text="@string/customer_adddress" />
 
             <Space
                 android:layout_width="8dp"
@@ -205,7 +207,7 @@
                 android:id="@+id/customerInfoPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Customer Phone" />
+                android:text="@string/customer_phone" />
 
             <Space
                 android:layout_width="8dp"
@@ -246,7 +248,7 @@
                 android:id="@+id/customerInfoAdditional"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Customer Additional Information" />
+                android:text="@string/customer_additional_information" />
 
             <Space
                 android:layout_width="8dp"

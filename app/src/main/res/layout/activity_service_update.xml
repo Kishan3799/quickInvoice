@@ -13,7 +13,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Edit Inventory"
+        android:text="@string/edit_inventory"
         android:textColor="#000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="95dp"
         android:layout_marginTop="28dp"
-        android:contentDescription="close"
+        android:contentDescription="@string/close"
         android:src="@drawable/baseline_close_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvUpdateInventory"
@@ -46,7 +46,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Service Name"
+            android:hint="@string/service_name"
             android:layout_margin="10dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
@@ -63,7 +63,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Service Charge"
+            android:hint="@string/service_charge"
             android:layout_margin="10dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
@@ -81,7 +81,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Discount"
+            android:hint="@string/discount"
             android:layout_margin="10dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
@@ -98,7 +98,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tax %"
+            android:hint="@string/tax"
             android:layout_margin="10dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
@@ -116,7 +116,7 @@
             android:id="@+id/updateServiceBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:text="@string/save"
             android:textAllCaps="false"
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"
